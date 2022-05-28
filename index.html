@@ -215,6 +215,10 @@
 
             player.x = car.offsetLeft;
             player.y = car.offsetTop;
+
+            let rect = e.target.getBoundingClientRect();
+            player.x = e.targetTouches[0].pageX - rect.left;
+            player.y = e.targetTouches[0].pageY - rect.top;
         }
 
         function randomColor(){
